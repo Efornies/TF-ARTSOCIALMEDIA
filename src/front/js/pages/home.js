@@ -6,12 +6,14 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="Fondo">
+		<div className="Fondo"> 
 		<div className="Cuadro">
+			
 
 		
 		<div className="text-center mt-5">
 			<h1>Artcop</h1>
+			<p> Entra en el mundo colaborativo de ARTCOP</p>
 		</div>
 		</div>
 		</div>

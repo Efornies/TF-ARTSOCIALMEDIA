@@ -17,22 +17,23 @@ main {
 }
 
 .Fondo {
-    position: absolute;
-    width: 1440px;
-    height: 900px;
-    left: 0px;
-    top: 0px;
-    
-    background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -0.97%, rgba(0, 0, 0, 0) 100%);
+  position: relative;
+  width: 1440px;
+  height: 900px;
+  left: 0px;
+  top: 0px;
+  background: url(https://wallpaper.dog/large/5449058.jpg);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(64px);
 }
 
 .Cuadro {
-    position: absolute;
-    width: 660px;
-    height: 778px;
-    left: 80px;
-    top: 61px;
-    
-    background: #FFFFFF;
-    border-radius: 54px;
+  position: absolute;
+  width: 660px;
+  height: 778px;
+  left: 80px;
+  top: 61px;
+  opacity: 0.5;
+  background: #ffffff;
+  border-radius: 54px;
 }
