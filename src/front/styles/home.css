@@ -5,3 +5,34 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+
+body {
+  font-family: "Comfortaa", cursive;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.Fondo {
+    position: absolute;
+    width: 1440px;
+    height: 900px;
+    left: 0px;
+    top: 0px;
+    
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -0.97%, rgba(0, 0, 0, 0) 100%);
+}
+
+.Cuadro {
+    position: absolute;
+    width: 660px;
+    height: 778px;
+    left: 80px;
+    top: 61px;
+    
+    background: #FFFFFF;
+    border-radius: 54px;
+}
