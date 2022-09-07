@@ -20,27 +20,26 @@ main {
 .welcomebox {
   position: absolute;
   z-index: 3333;
-  width: 660px;
-  height: 778px;
-  left: 80px;
-  top: 61px;
+  width: 40%;
+  height: 80%;
+  left: 10%;
+  top: 5%;
   background-color: rgb(226, 178, 134); /* Fallback color */
   background-color: rgba(201, 166, 137, 0.45); /* Black w/opacity/see-through */
   border-radius: 60px;
-  
 }
 
 .art {
   position: absolute;
   z-index: 2222;
-  width: 1440px;
-  height: 900px;
-  left: 80px;
-  top: 10px;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
   background: url(https://wallpaper.dog/large/5449058.jpg);
   border-radius: 30px;
-  filter: drop-shadow(0px 0px 94px rgba(0, 0, 0, 0.65)  );
-  
+  background-size: cover;
+  filter: drop-shadow(0px 0px 94px rgba(0, 0, 0, 0.65));
 }
 
 .back {
@@ -48,9 +47,10 @@ main {
   z-index: -1;
   width: 100%;
   height: 100%;
+  background-size: cover;
+
   mix-blend-mode: normal;
-  /*filter: blur(74px)*/
-  
+  filter: blur(5px);
+
   background: url(https://wallpaper.dog/large/5449058.jpg);
 }
-
