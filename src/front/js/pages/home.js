@@ -6,8 +6,9 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="Fondo"> 
-		<div className="Cuadro">
+		<div className="back"> 
+		<div className="art"> 
+		<div className="welcomebox">
 			
 
 		
@@ -17,5 +18,6 @@ export const Home = () => {
 		</div>
 		</div>
 		</div>
+		</div> 
 	);
 };
