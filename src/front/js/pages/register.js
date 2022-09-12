@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
-import {Link} from "react-router-dom";
+import "../../styles/register.css";
 
-export const Home = () => {
+export const Register = () => {
   const { store, actions } = useContext(Context);
   return (
     <div className="parent h-100">
@@ -14,7 +13,15 @@ export const Home = () => {
             <div className="Auth-form-container">
               <form className="Auth-form">
                 <div className="Auth-form-content">
-                  <h3 className="Auth-form-title">Sign In</h3>
+                  <h3 className="Auth-form-title">Sign up tu Artcop</h3>
+                  <div className="form-group mt-3">
+                    <label>Name</label>
+                    <input
+                      type="name"
+                      className="form-control mt-1"
+                      placeholder="Full name"
+                    />
+                  </div>
                   <div className="form-group mt-3">
                     <label>Email address</label>
                     <input
@@ -24,7 +31,7 @@ export const Home = () => {
                     />
                   </div>
                   <div className="form-group mt-3">
-                    <label>Password</label>
+                    <label>Create a password</label>
                     <input
                       type="password"
                       className="form-control mt-1"
@@ -37,7 +44,7 @@ export const Home = () => {
                     </button>
                   </div>
                   <p className="forgot-password text-right mt-2">
-                    New artist? <Link to="/register"> Register now! </Link>
+                    Agree <a href="#">copyright issues</a>
                   </p>
                 </div>
               </form>
