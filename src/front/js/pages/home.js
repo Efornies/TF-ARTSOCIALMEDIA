@@ -10,7 +10,7 @@ export const Home = () => {
       <div className="back "> </div>
       <div className="art">
         <div className="welcomebox">
-          <div className="loginform">
+          
             <div className="Auth-form-container">
               <form className="Auth-form">
                 <div className="Auth-form-content">
@@ -42,7 +42,7 @@ export const Home = () => {
                 </div>
               </form>
             </div>
-          </div>
+          
         </div>
       </div>
     </div>
