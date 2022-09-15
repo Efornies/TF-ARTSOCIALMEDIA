@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import {Link} from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee, faKiwiBird } from "@fortawesome/free-solid-svg-icons";
+
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -10,7 +13,9 @@ export const Home = () => {
       <div className="back "> </div>
       <div className="art">
         <div className="welcomebox">
-          
+        <div className="titulo">
+            <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
+          </div>
             <div className="Auth-form-container">
               <form className="Auth-form">
                 <div className="Auth-form-content">

@@ -12,13 +12,13 @@ main {
 
 .welcomebox {
   position: absolute;
+  
   z-index: 3333;
   width: 40%;
   height: 90%;
   left: 5%;
-  top: 5%;
-  background-color: rgb(226, 178, 134); /* Fallback color */
-  background-color: rgba(201, 166, 137, 0.45); /* Black w/opacity/see-through */
+  top: 10%;
+
   border-radius: 60px;
 }
 

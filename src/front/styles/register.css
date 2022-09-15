@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 
 body {
@@ -10,19 +9,17 @@ main {
   min-height: 80vh;
 }
 
-.welcomebox {
-  display:flex;
+.welcomeboxregister {
+  display: inline-block;
+  flex-wrap: wrap;
+  z-index: 3333;
+  position: absolute;
   z-index: 3333;
   width: 40%;
   height: 90%;
   left: 5%;
-  
-  padding-top: 2%;
-  padding-left: 4%;
-  padding-bottom: 4%;
   top: 5%;
-  background-color: rgb(226, 178, 134); /* Fallback color */
-  background-color: rgba(201, 166, 137, 0.45); /* Black w/opacity/see-through */
+
   border-radius: 60px;
 }
 
@@ -50,25 +47,26 @@ main {
   background: url(https://wallpaper.dog/large/5449058.jpg);
 }
 
-.titulo{
+.titulo {
   display: flex;
-  margin-top: 30%;
+  margin-top: 20%;
+  margin-left: 15%;
+  
 }
 .Auth-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40%;
-
+  margin-top: 10%;
 }
 
 .Auth-form {
-  width: 420px;
+  width: 80%;
   box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-  padding-top: 30px;
-  padding-bottom: 20px;
+
   border-radius: 8px;
   background-color: white;
+  
 }
 
 .Auth-form-content {
@@ -83,7 +81,6 @@ main {
   color: rgb(34, 34, 34);
   font-weight: 800;
 }
-
 
 label {
   font-size: 14px;

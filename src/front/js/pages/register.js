@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/register.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faCoffee, faKiwiBird } from "@fortawesome/free-solid-svg-icons";
 
 export const Register = () => {
   const { store, actions } = useContext(Context);
@@ -12,16 +12,15 @@ export const Register = () => {
     <div className="parent h-100">
       <div className="back "> </div>
       <div className="art">
-        <div className="welcomebox">
+        <div className="welcomeboxregister">
           <div className="titulo">
-            <FontAwesomeIcon icon={faCoffee} />
+            <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
-
           <div className="Auth-form-container">
             <form className="Auth-form">
               <div className="Auth-form-content">
                 <h3 className="Auth-form-title">Sign up tu Artcop</h3>
-                <div className="form-group mt-3">
+                <div className="form-group mt-0">
                   <label>Name</label>
                   <input
                     type="name"
@@ -50,7 +49,7 @@ export const Register = () => {
                     Create Account
                   </button>
                 </div>
-                <p className="forgot-password text-right mt-2">
+                <p className="forgot-password text-right mt-3">
                   <input type="checkbox" /> I Agree to Privacy Policy
                 </p>
               </div>
