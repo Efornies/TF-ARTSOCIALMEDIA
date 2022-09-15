@@ -19,7 +19,8 @@ main {
   height: 90%;
   left: 5%;
   top: 5%;
-
+  font-family: "Comfortaa", cursive;
+  
   border-radius: 60px;
 }
 

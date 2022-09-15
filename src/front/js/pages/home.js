@@ -16,7 +16,7 @@ export const Home = () => {
         <div className="titulo">
             <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
-            <div className="Auth-form-container">
+            <div className="Auth-form-container mt-0">
               <form className="Auth-form">
                 <div className="Auth-form-content">
                   <h3 className="Auth-form-title">Sign In</h3>

@@ -12,7 +12,9 @@ main {
 
 .welcomebox {
   position: absolute;
-  
+  font-family: "Comfortaa", cursive;
+ 
+
   z-index: 3333;
   width: 40%;
   height: 90%;

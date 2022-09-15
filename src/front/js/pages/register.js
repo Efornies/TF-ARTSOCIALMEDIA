@@ -16,10 +16,10 @@ export const Register = () => {
           <div className="titulo">
             <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
-          <div className="Auth-form-container">
+          <div className="Auth-form-container mt-0">
             <form className="Auth-form">
               <div className="Auth-form-content">
-                <h3 className="Auth-form-title">Sign up tu Artcop</h3>
+                <h3 className="Auth-form-title">Sign up to Kiwi</h3>
                 <div className="form-group mt-0">
                   <label>Name</label>
                   <input
