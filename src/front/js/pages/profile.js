@@ -3,85 +3,169 @@ import { Context } from "../store/appContext";
 import "../../styles/profile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faKiwiBird } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-
-
+import {CreatePost} from "../component/Post/CreatePost";
+import {Post} from "../component/Post/Post";
+import {ProfileHeader} from "../component/ProfileHeader";
 
 export const Profile = () => {
-
   return (
-    <div className="gradient-custom-2" style={{ backgroundColor: '#9de2ff' }}>
-      <MDBContainer className="py-5 h-100">
-        <MDBRow className="justify-content-center align-items-center h-100">
-          <MDBCol lg="9" xl="7">
-            <MDBCard>
-              <div className="rounded-top text-white d-flex flex-row" style={{ backgroundColor: '#000', height: '200px' }}>
-                <div className="ms-4 mt-5 d-flex flex-column" style={{ width: '150px' }}>
-                  <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                    alt="Generic placeholder image" className="mt-4 mb-2 img-thumbnail" fluid style={{ width: '150px', zIndex: '1' }} />
-                  <MDBBtn outline color="dark" style={{height: '36px', overflow: 'visible'}}>
-                    Edit profile
-                  </MDBBtn>
+    <div className="h-screen">
+      <div className="mt-14 shadow bg-white h-screen">
+        {/* PROFILE HEADER */}
+        <ProfileHeader />
+        {/* END PROFILE HEADER */}
+
+        {/* // CONTENT */}
+        <div>
+          <div className="bg-gray-100 ">
+            <div className="flex justify-center h-screen">
+              {/* LEFT */}
+              <div>
+                {/* // INTRO */}
+                <div className="mr-12 mt-4">
+                  <div
+                    className="p-4 shadow rounded-lg bg-white w-80"
+                    id="intro"
+                  >
+                    <h1 className="font-bold text-xl">Intro</h1>
+                  </div>
                 </div>
-                <div className="ms-3" style={{ marginTop: '130px' }}>
-                  <MDBTypography tag="h5">Andy Horwitz</MDBTypography>
-                  <MDBCardText>New York</MDBCardText>
+                {/* // END INTRO */}
+
+                {/* // PHOTOS */}
+                <div className="mr-12 mt-4">
+                  <div
+                    className="p-4 shadow rounded-lg bg-white w-80"
+                    id="intro"
+                  >
+                    <div className="flex justify-between">
+                      <h1 className="font-bold text-xl">Photos</h1>
+                      <a href="#" className="text-lg text-blue-700">
+                        See All Photos
+                      </a>
+                    </div>
+                  </div>
                 </div>
+                {/* // END PHOTOS */}
+
+                {/* // FRIENDS */}
+                <div className="mr-12 mt-4">
+                  <div
+                    className="p-4 shadow rounded-lg bg-white w-80"
+                    id="intro"
+                  >
+                    {/* Header */}
+                    <div className="flex justify-between">
+                      <h1 className="font-bold text-xl">Friends</h1>
+                      <Link
+                        to="/friends/myId"
+                        className="text-lg text-blue-700 hover:bg-blue-200"
+                      >
+                        See All Friends
+                      </Link>
+                    </div>
+                    {/* List */}
+                    <div className="">
+                      <p className="text-base text-gray-400">1000 friends</p>
+                      <div className="grid grid-cols-3 gap-1">
+                        <div className="bg-white p-0.5">
+                          <img
+                            src="./images/profile_photo_cat.jpg"
+                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
+                          />
+                          <Link
+                            to={`/profile/friendId`}
+                            className="font-semibold text-sm"
+                          >
+                            Friend FullName
+                          </Link>
+                        </div>
+                        <div className="bg-white p-0.5">
+                          <img
+                            src="./images/profile_photo_cat.jpg"
+                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
+                          />
+                          <Link
+                            to={`/profile/friendId`}
+                            className="font-semibold text-sm"
+                          >
+                            Friend FullName
+                          </Link>
+                        </div>
+                        <div className="bg-white p-0.5">
+                          <img
+                            src="./images/profile_photo_cat.jpg"
+                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
+                          />
+                          <Link
+                            to={`/profile/friendId`}
+                            className="font-semibold text-sm"
+                          >
+                            Friend FullName
+                          </Link>
+                        </div>
+                        <div className="bg-white p-0.5">
+                          <img
+                            src="./images/profile_photo_cat.jpg"
+                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
+                          />
+                          <Link
+                            to={`/profile/friendId`}
+                            className="font-semibold text-sm"
+                          >
+                            Friend FullName
+                          </Link>
+                        </div>
+                        <div className="bg-white p-0.5">
+                          <img
+                            src="./images/profile_photo_cat.jpg"
+                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
+                          />
+                          <Link
+                            to={`/profile/friendId`}
+                            className="font-semibold text-sm"
+                          >
+                            Friend FullName
+                          </Link>
+                        </div>
+                        <div className="bg-white p-0.5">
+                          <img
+                            src="./images/profile_photo_cat.jpg"
+                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
+                          />
+                          <Link
+                            to={`/profile/friendId`}
+                            className="font-semibold text-sm"
+                          >
+                            Friend FullName
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* // END FRIENDS */}
               </div>
-              <div className="p-4 text-black" style={{ backgroundColor: '#f8f9fa' }}>
-                <div className="d-flex justify-content-end text-center py-1">
-                  <div>
-                    <MDBCardText className="mb-1 h5">253</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Photos</MDBCardText>
-                  </div>
-                  <div className="px-3">
-                    <MDBCardText className="mb-1 h5">1026</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Followers</MDBCardText>
-                  </div>
-                  <div>
-                    <MDBCardText className="mb-1 h5">478</MDBCardText>
-                    <MDBCardText className="small text-muted mb-0">Following</MDBCardText>
-                  </div>
-                </div>
+              {/* END LEFT */}
+
+              {/* // POST LIST */}
+              <div className="w-2/5">
+                {/* CREATE POST */}
+                <CreatePost />
+                {/* END CREATE POST */}
+
+                {/* POST */}
+                <Post />
+                {/* END POST */}
               </div>
-              <MDBCardBody className="text-black p-4">
-                <div className="mb-5">
-                  <p className="lead fw-normal mb-1">About</p>
-                  <div className="p-4" style={{ backgroundColor: '#f8f9fa' }}>
-                    <MDBCardText className="font-italic mb-1">Web Developer</MDBCardText>
-                    <MDBCardText className="font-italic mb-1">Lives in New York</MDBCardText>
-                    <MDBCardText className="font-italic mb-0">Photographer</MDBCardText>
-                  </div>
-                </div>
-                <div className="d-flex justify-content-between align-items-center mb-4">
-                  <MDBCardText className="lead fw-normal mb-0">Recent photos</MDBCardText>
-                  <MDBCardText className="mb-0"><a href="#!" className="text-muted">Show all</a></MDBCardText>
-                </div>
-                <MDBRow>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
-                      alt="image 1" className="w-100 rounded-3" />
-                  </MDBCol>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
-                      alt="image 1" className="w-100 rounded-3" />
-                  </MDBCol>
-                </MDBRow>
-                <MDBRow className="g-2">
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
-                      alt="image 1" className="w-100 rounded-3" />
-                  </MDBCol>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
-                      alt="image 1" className="w-100 rounded-3" />
-                  </MDBCol>
-                </MDBRow>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
+              {/* // END POST LIST */}
+            </div>
+          </div>
+        </div>
+        {/* // END CONTENT */}
+      </div>
     </div>
   );
-}
+};
