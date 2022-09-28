@@ -1,170 +1,56 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/profile.css";
+import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faKiwiBird } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
-import {CreatePost} from "../component/Post/CreatePost";
-import {Post} from "../component/Post/Post";
-import {ProfileHeader} from "../component/ProfileHeader";
+
+
 
 export const Profile = () => {
+  const { store, actions } = useContext(Context);
   return (
-    <div className="h-screen">
-      <div className="mt-14 shadow bg-white h-screen">
-        {/* PROFILE HEADER */}
-        <ProfileHeader />
-        {/* END PROFILE HEADER */}
-
-        {/* // CONTENT */}
-        <div>
-          <div className="bg-gray-100 ">
-            <div className="flex justify-center h-screen">
-              {/* LEFT */}
-              <div>
-                {/* // INTRO */}
-                <div className="mr-12 mt-4">
-                  <div
-                    className="p-4 shadow rounded-lg bg-white w-80"
-                    id="intro"
-                  >
-                    <h1 className="font-bold text-xl">Intro</h1>
-                  </div>
-                </div>
-                {/* // END INTRO */}
-
-                {/* // PHOTOS */}
-                <div className="mr-12 mt-4">
-                  <div
-                    className="p-4 shadow rounded-lg bg-white w-80"
-                    id="intro"
-                  >
-                    <div className="flex justify-between">
-                      <h1 className="font-bold text-xl">Photos</h1>
-                      <a href="#" className="text-lg text-blue-700">
-                        See All Photos
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* // END PHOTOS */}
-
-                {/* // FRIENDS */}
-                <div className="mr-12 mt-4">
-                  <div
-                    className="p-4 shadow rounded-lg bg-white w-80"
-                    id="intro"
-                  >
-                    {/* Header */}
-                    <div className="flex justify-between">
-                      <h1 className="font-bold text-xl">Friends</h1>
-                      <Link
-                        to="/friends/myId"
-                        className="text-lg text-blue-700 hover:bg-blue-200"
-                      >
-                        See All Friends
-                      </Link>
-                    </div>
-                    {/* List */}
-                    <div className="">
-                      <p className="text-base text-gray-400">1000 friends</p>
-                      <div className="grid grid-cols-3 gap-1">
-                        <div className="bg-white p-0.5">
-                          <img
-                            src="./images/profile_photo_cat.jpg"
-                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
-                          />
-                          <Link
-                            to={`/profile/friendId`}
-                            className="font-semibold text-sm"
-                          >
-                            Friend FullName
-                          </Link>
-                        </div>
-                        <div className="bg-white p-0.5">
-                          <img
-                            src="./images/profile_photo_cat.jpg"
-                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
-                          />
-                          <Link
-                            to={`/profile/friendId`}
-                            className="font-semibold text-sm"
-                          >
-                            Friend FullName
-                          </Link>
-                        </div>
-                        <div className="bg-white p-0.5">
-                          <img
-                            src="./images/profile_photo_cat.jpg"
-                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
-                          />
-                          <Link
-                            to={`/profile/friendId`}
-                            className="font-semibold text-sm"
-                          >
-                            Friend FullName
-                          </Link>
-                        </div>
-                        <div className="bg-white p-0.5">
-                          <img
-                            src="./images/profile_photo_cat.jpg"
-                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
-                          />
-                          <Link
-                            to={`/profile/friendId`}
-                            className="font-semibold text-sm"
-                          >
-                            Friend FullName
-                          </Link>
-                        </div>
-                        <div className="bg-white p-0.5">
-                          <img
-                            src="./images/profile_photo_cat.jpg"
-                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
-                          />
-                          <Link
-                            to={`/profile/friendId`}
-                            className="font-semibold text-sm"
-                          >
-                            Friend FullName
-                          </Link>
-                        </div>
-                        <div className="bg-white p-0.5">
-                          <img
-                            src="./images/profile_photo_cat.jpg"
-                            className="w-24 h-24 rounded-md mt-2 cursor-pointer"
-                          />
-                          <Link
-                            to={`/profile/friendId`}
-                            className="font-semibold text-sm"
-                          >
-                            Friend FullName
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* // END FRIENDS */}
-              </div>
-              {/* END LEFT */}
-
-              {/* // POST LIST */}
-              <div className="w-2/5">
-                {/* CREATE POST */}
-                <CreatePost />
-                {/* END CREATE POST */}
-
-                {/* POST */}
-                <Post />
-                {/* END POST */}
-              </div>
-              {/* // END POST LIST */}
-            </div>
+    <div className="parent h-100">
+      <div className="back "> </div>
+      <div className="art">
+        <div className="welcomebox">
+        <div className="titulo">
+            <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
+            <div className="Auth-form-container mt-0">
+              <form className="Auth-form">
+                <div className="Auth-form-content">
+                  <h3 className="Auth-form-title">Sign In</h3>
+                  <div className="form-group mt-3">
+                    <label>Email address</label>
+                    <input
+                      type="email"
+                      className="form-control mt-1"
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  <div className="form-group mt-3">
+                    <label>Password</label>
+                    <input
+                      type="password"
+                      className="form-control mt-1"
+                      placeholder="Enter password"
+                    />
+                  </div>
+                  <div className="d-grid gap-2 mt-3">
+                    <button type="submit" className="btn btn-primary">
+                      Submit
+                    </button>
+                  </div>
+                  <p className="forgot-password text-right mt-2">
+                    New artist? <Link to="/register"> Register now! </Link>
+                  </p>
+                </div>
+              </form>
+            </div>
+          
         </div>
-        {/* // END CONTENT */}
       </div>
     </div>
   );
