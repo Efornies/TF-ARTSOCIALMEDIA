@@ -14,6 +14,10 @@ main {
   margin-right: 10px;
 }
 
+.container {
+  max-width: "100%";
+}
+
 .small {
   display: block;
   line-height: 1.428571429;
@@ -21,18 +25,15 @@ main {
 }
 
 .covercard {
-  background: white;
-
+  background-image: "../img/background_image.png";
 }
 
 .profilecard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin-left: 2.5%;
-
   text-align: center;
   background-color: #ffffff;
-
 }
 
 .title {
@@ -46,7 +47,7 @@ button {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color:burlywood;
+  background-color: burlywood;
   text-align: center;
   cursor: pointer;
   width: 100%;
