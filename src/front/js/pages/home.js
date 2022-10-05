@@ -37,12 +37,12 @@ export const Home = () => {
                     />
                   </div>
                   <div className="d-grid gap-2 mt-3">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit"  style={{backgroundColor : "burlywood"}}>
                       Login
                     </button>
                   </div>
                   <p className="forgot-password text-right mt-2">
-                    New artist? <Link to="/register"> Register now! </Link>
+                    New artist? <Link to="/register" style={{color : "burlywood", fontSize : "medium"}}> Register now! </Link>
                   </p>
                 </div>
               </form>

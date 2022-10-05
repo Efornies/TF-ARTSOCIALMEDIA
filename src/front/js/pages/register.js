@@ -13,7 +13,7 @@ export const Register = () => {
       <div className="back "> </div>
       <div className="art">
         <div className="welcomeboxregister">
-          <div className="titulo">
+          <div className="tituloregister">
             <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
           <div className="Auth-form-container mt-0">
@@ -45,7 +45,7 @@ export const Register = () => {
                   />
                 </div>
                 <div className="d-grid gap-2 mt-3">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" style={{backgroundColor : "burlywood"}}>
                     Create Account
                   </button>
                 </div>
