@@ -10,17 +10,20 @@ main {
   min-height: 80vh;
 }
 
+.titulohome {
+  display: flex;
+  margin-top: 20%;
+  margin-left: 15%;
+  
+}
 .welcomebox {
   position: absolute;
   font-family: "Comfortaa", cursive;
- 
-
   z-index: 3333;
   width: 40%;
   height: 90%;
   left: 5%;
-  top: 10%;
-
+ 
   border-radius: 60px;
 }
 

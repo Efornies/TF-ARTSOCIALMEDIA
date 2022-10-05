@@ -14,9 +14,7 @@ main {
   margin-right: 10px;
 }
 
-.container {
-  max-width: "100%";
-}
+
 
 .small {
   display: block;
@@ -26,17 +24,24 @@ main {
 
 .covercard {
   background-image: "../img/background_image.png";
+  width:90%;
+ 
+  
 }
 
 .profilecard {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin-left: 2.5%;
+  padding-top: 2%;
+  margin-top: 10%;
+  
   text-align: center;
   background-color: #ffffff;
+  font-family: "Comfortaa", cursive;
 }
 
-.title {
+.titleprofile {
   color: grey;
   font-size: 18px;
 }
@@ -52,6 +57,7 @@ button {
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+  font-family: "Comfortaa", cursive;
 }
 
 a {

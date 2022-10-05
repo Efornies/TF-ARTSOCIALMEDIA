@@ -13,7 +13,7 @@ export const Home = () => {
       <div className="back "> </div>
       <div className="art">
         <div className="welcomebox">
-        <div className="titulo">
+        <div className="titulohome">
             <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
             <div className="Auth-form-container mt-0">
