@@ -14,7 +14,9 @@ main {
   margin-right: 10px;
 }
 
-
+.ArtPerfil {
+  margin: 2%;
+}
 
 .small {
   display: block;
