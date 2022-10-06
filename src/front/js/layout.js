@@ -5,10 +5,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/home";
 import { Register} from "./pages/register";
 import { Profile} from "./pages/profile";
+import { Myfavs} from "./pages/myfavs";
+import { Myfoll} from "./pages/myfoll";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
-import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -25,6 +27,8 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<Profile />} path="/profile" />
+                        <Route element={<Myfavs />} path="/myfavs" />
+                        <Route element={<Myfoll />} path="/myfoll" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
