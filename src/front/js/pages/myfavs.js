@@ -9,6 +9,7 @@ import Carousel from "react-bootstrap/Carousel";
 import background from "../../img/background_image.png";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {Cardfav} from "../component/cardfav";
 
 export const Myfavs = () => {
   const { store, actions } = useContext(Context);
@@ -105,6 +106,11 @@ export const Myfavs = () => {
         </li>
       </ul>
       </Row>
+
+        {/*COMPONENTE CARDFAV*/}
+        <Cardfav/>
+
     </div>
+
   );
 };

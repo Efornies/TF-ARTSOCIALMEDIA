@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 
+
 export const Profile = () => {
   const { store, actions } = useContext(Context);
   const [show, setShow] = useState(false);
