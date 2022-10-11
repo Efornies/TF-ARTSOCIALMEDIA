@@ -2,24 +2,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			url: "https://3001-efornies-tfartsocialmed-e1ev8ks9xk4.ws-eu70.gitpod.io/",
+			user: {},
+			logged: null
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+
+			loginUser : async (user) => {
+				
+				try {
+				  const resp = await fetch(getStore().url + "api/login", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(user),
+				  });
+				  const data = await resp.json();
+				  
+					if (data.token) {
+					  localStorage.setItem("token", data.token);
+					  getActions().verify();
+					  setStore({user:data.user, logged:data.logged})
+					}
+				  
+				} catch (e) {
+				  /* alert("ERROR") */;
+				}
+			  },
 
 			getMessage: async () => {
 				try{

@@ -14,32 +14,9 @@ export const Home = () => {
   const [infoError2, setInfoError2] = useState(false);
   const { store, actions } = useContext(Context);
 
-  useEffect(() => {
-    initialState();
-  }, []);
 
   
-  const loginUser = async () => {
-    try {
-      const resp = await fetch(store.url + "login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
-      });
-      const data = await resp.json();
-      if (emailIsValid(user.email)) {
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-          await actions.verify();
-          navigate.push("/feed");
-        }
-      } else {
-        messageError2();
-      }
-    } catch (e) {
-      alert("ERROR");
-    }
-  };
+  
 
   return (
     <div className="parent h-100">
@@ -50,7 +27,7 @@ export const Home = () => {
             <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
             <div className="Auth-form-container mt-0">
-              <form className="Auth-form">
+              <div className="Auth-form">
                 <div className="Auth-form-content">
                   <h3 className="Auth-form-title">Sign In</h3>
                   <div className="form-group mt-3">
@@ -79,13 +56,15 @@ export const Home = () => {
                   </div>
                   <div className="d-grid gap-2 mt-3">
                     <button type="submit"  style={{backgroundColor : "burlywood"}}  onClick={() => {
-                  loginUser();
+                  actions.loginUser(user);
+                  /* if (store.logged) */ {navigate('/profile')} 
+                  ;
                 }}
                 onKeyPress={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
                     e.stopPropagation();
-                    loginUser();
+                    actions.loginUser(user);
                   }
                 }}>
                       Login
@@ -103,7 +82,7 @@ export const Home = () => {
                     New artist? <Link to="/register" style={{color : "burlywood", fontSize : "medium"}}> Register now! </Link>
                   </p>
                 </div>
-              </form>
+              </div>
             </div>
           
         </div>

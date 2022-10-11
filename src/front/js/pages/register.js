@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/register.css";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee, faKiwiBird } from "@fortawesome/free-solid-svg-icons";
 
 export const Register = () => {
   const { store, actions } = useContext(Context);
-  const history = useHistory();
+  const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [infoError, setInfoError] = useState(false);
   const [infoError2, setInfoError2] = useState(false);
@@ -25,7 +26,7 @@ export const Register = () => {
       user.email != "" &&
       user.password != ""
     ) {
-      const response = await fetch(store.url + "register", {
+      const response = await fetch(store.url + "api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
@@ -34,7 +35,7 @@ export const Register = () => {
       const data = await response.json();
       if (data.created) {
         initialState(); //state = ""
-        setSwitchPanel(false); //Switch to the form panel to login
+       
       } else {
         alert(error);
       }
@@ -84,7 +85,7 @@ const initialState = () => {
             <FontAwesomeIcon icon={faKiwiBird} size="6x" inverse pull="left" />
           </div>
           <div className="Auth-form-container mt-0">
-            <form className="Auth-form">
+            <div className="Auth-form">
               <div className="Auth-form-content">
                 <h3 className="Auth-form-title">Sign up to Kiwi</h3>
                 <div className="form-group mt-0">
@@ -183,7 +184,7 @@ const initialState = () => {
                   <input type="checkbox" /> I Agree to Privacy Policy
                 </p>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
