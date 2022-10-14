@@ -95,7 +95,7 @@ export const Myfavs = () => {
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/myfavs"  class="nav-link active"  href="#">
+          <Link to="/myfavs"  className="nav-link active"  href="#">
             My Favs
           </Link>
         </li>
@@ -105,7 +105,7 @@ export const Myfavs = () => {
           </Link>
         </li>
       </ul>
-      </Row>
+      </Row >
 
         {/*COMPONENTE CARDFAV*/}
         <Cardfav/>
