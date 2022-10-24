@@ -9,6 +9,7 @@ import Carousel from "react-bootstrap/Carousel";
 import background from "../../img/background_image.png";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {Cardfollow} from "../component/cardfollow";
 
 export const Myfoll = () => {
   const { store, actions } = useContext(Context);
@@ -117,6 +118,7 @@ export const Myfoll = () => {
           </ul>
         </div>
       </Row>
+      <Cardfollow/>
     </div>
   );
 };
