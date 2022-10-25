@@ -47,3 +47,21 @@ def register_user():
     else:
         return jsonify({"created": False, "msg": "Falta información"}), 400
 
+
+
+
+@api.route("/profile", methods=["POST"])
+def edit_user():
+    body_username = request.json.get("username")
+    body_email = request.json.get("email")
+    body_password = request.json.get("password")
+
+
+    if body_email and body_password:
+        new_user = User(username=body_username, 
+                        email=body_email, password=body_password)
+        db.session.add(new_user)
+        db.session.commit()
+        return jsonify({"created": True, "user": new_user.serialize()}), 200
+    else:
+        return jsonify({"created": False, "msg": "Falta información"}), 400

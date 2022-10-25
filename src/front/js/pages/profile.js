@@ -35,7 +35,10 @@ export const Profile = () => {
             <button type="button" onClick={handleShow}>
               Edit
             </button>
-            <Modal className ="modalprofile" show={show} onHide={handleClose}>
+            <button type="button" onClick={localStorage.clear()}>
+              Logout
+            </button>
+            <Modal className ="modalprofile" show={show} onHide={handleClose} >
               <Modal.Header closeButton>
                 <Modal.Title>Edit Profile</Modal.Title>
               </Modal.Header>

@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			message: null,
-			url: "https://3001-efornies-tfartsocialmed-e1ev8ks9xk4.ws-eu70.gitpod.io/",
+			url: "https://3001-efornies-tfartsocialmed-86f96j25psv.ws-eu72.gitpod.io/",
 			user: {},
 			logged: null
 		},
@@ -27,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  
 					if (data.token) {
 					  localStorage.setItem("token", data.token);
-					  getActions().verify();
+					/*   getActions().verify(); */
 					  setStore({user:data.user, logged:data.logged})
 					}
 				  

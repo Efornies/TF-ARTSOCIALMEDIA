@@ -15,7 +15,11 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
 
-  
+const login = () => { 
+  actions.loginUser(user);
+  if (localStorage.getItem("token")) {navigate('/profile')} 
+
+}
   
 
   return (
@@ -56,8 +60,7 @@ export const Home = () => {
                   </div>
                   <div className="d-grid gap-2 mt-3">
                     <button type="submit"  style={{backgroundColor : "burlywood"}}  onClick={() => {
-                  actions.loginUser(user);
-                  /* if (store.logged) */ {navigate('/profile')} 
+                   login ()
                   ;
                 }}
                 onKeyPress={(e) => {
