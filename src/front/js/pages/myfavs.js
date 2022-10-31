@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import background from "../../img/background_image.png";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import HoverImage from "react-hover-image";
 import {Cardfav} from "../component/cardfav";
 
 export const Myfavs = () => {

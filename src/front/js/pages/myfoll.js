@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import Carousel from "react-bootstrap/Carousel";
+import HoverImage from "react-hover-image";
 import background from "../../img/background_image.png";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

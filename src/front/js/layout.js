@@ -7,8 +7,7 @@ import { Register} from "./pages/register";
 import { Profile} from "./pages/profile";
 import { Myfavs} from "./pages/myfavs";
 import { Myfoll} from "./pages/myfoll";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
+
 import injectContext from "./store/appContext";
 
 
@@ -29,8 +28,7 @@ const Layout = () => {
                         <Route element={<Profile />} path="/profile" />
                         <Route element={<Myfavs />} path="/myfavs" />
                         <Route element={<Myfoll />} path="/myfoll" />
-                        <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
+                    
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                    

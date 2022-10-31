@@ -4,17 +4,15 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			user: {},
+			profile: {},
 			message: null,
 			url: "https://3001-efornies-tfartsocialmed-86f96j25psv.ws-eu72.gitpod.io/",
 			user: {},
 			logged: null
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-
+			
 			loginUser : async (user) => {
 				
 				try {
@@ -27,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  
 					if (data.token) {
 					  localStorage.setItem("token", data.token);
-					/*   getActions().verify(); */
+					getActions().verify(); 
 					  setStore({user:data.user, logged:data.logged})
 					}
 				  
@@ -48,20 +46,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
+			editUser: async (user) => {
+				try {
+				  let body = new FormData();
+				  for (let key in user) {
+					body.append(key, user[key]);
+				  }
+				  const resp = await fetch(getStore().url + "user", {
+					method: "PUT",
+					headers: {
+					  Authorization: "Bearer " + localStorage.getItem("token"),
+					},
+					body: body,
+				  });
+				  const data = await resp.json();
+				  setStore({ user: data.user });
+				} catch (e) {}
+			  },
+			
 		}
 	};
 };
