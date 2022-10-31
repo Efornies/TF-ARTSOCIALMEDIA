@@ -30,12 +30,12 @@ export const Profile = () => {
             />
             <h1>New</h1>
             <p className="titleprofile">Digital artist </p>
-            <p>3 drawings / 20 folowers</p>
+            <p>3 drawings / 20 followers</p>
 
             <button type="button" onClick={handleShow}>
               Edit
             </button>
-            <button type="button" onClick={localStorage.clear()}>
+            <button style= {{backgroundColor: "white", color: "black"}} type="button" onClick={localStorage.clear()}>
               Logout
             </button>
             <Modal className ="modalprofile" show={show} onHide={handleClose} >
