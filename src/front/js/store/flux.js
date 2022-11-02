@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: {},
 			profile: {},
 			message: null,
-			url: "https://3001-efornies-tfartsocialmed-86f96j25psv.ws-eu72.gitpod.io/",
+			url: "https://3001-efornies-tfartsocialmed-4tdalgn2yuy.ws-eu73.gitpod.io/",
 			user: {},
 			logged: null
 		},
@@ -47,23 +47,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			editUser: async (user) => {
-				try {
-				  let body = new FormData();
-				  for (let key in user) {
-					body.append(key, user[key]);
-				  }
-				  const resp = await fetch(getStore().url + "user", {
-					method: "PUT",
-					headers: {
-					  Authorization: "Bearer " + localStorage.getItem("token"),
-					},
-					body: body,
-				  });
-				  const data = await resp.json();
-				  setStore({ user: data.user });
-				} catch (e) {}
-			  },
 			
 		}
 	};

@@ -9,6 +9,9 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 import cloudinary
 import cloudinary.uploader
+from datetime import datetime
+from datetime import timedelta
+
 
 api = Blueprint('api', __name__)
 
@@ -28,7 +31,7 @@ def register():
             
 
 #Entregar un token a un usuario con Email y Password correctos
-@api.route('/home', methods=['POST'])
+@api.route('/login', methods=['POST'])
 def iniciar_sesion():
     request_body = request.get_json()
     print(request_body)
@@ -37,7 +40,7 @@ def iniciar_sesion():
         if user.password == request_body['password']:
             print("NOMBRE DE USUARIO " ,user.username)
             print("id DE USUARIO " ,user.id)
-            acceso = create_access_token(identity = user.id, expires_delta=datetime.timedelta(minutes=60))
+            acceso = create_access_token(identity = user.id)
 
             return jsonify({
                 "mensaje": "Welcome",
@@ -69,31 +72,3 @@ def edit_user():
     else:
         return jsonify({"created": False, "msg": "Falta información"}), 400
 
-
-# EDIT USER
-
-@api.route("/user", methods=["PUT"])
-@jwt_required()
-def editUser():
-    current_id = get_jwt_identity()
-    user = User.query.get(current_id)
-    body_username = request.form.get("username", None)
-    if body_username == "" or body_username == None:
-        body_username = "Username"
-    body_job = request.form.get("job", None)
-    if body_job == "" or body_job == None:
-        body_job = "Job"
-   
-    if "banner_picture" in request.files:
-        body_banner_picture = cloudinary.uploader.upload(
-            request.files['banner_picture'])
-        user.banner_picture = body_banner_picture['secure_url']
-    if "profile_picture" in request.files:
-        body_profile_picture = cloudinary.uploader.upload(
-            request.files['profile_picture'])
-        user.profile_picture = body_profile_picture['secure_url']
-    user.username = body_username
-    user.job = body_job
-    
-    db.session.commit()
-    return jsonify({"edited": True, "user": user.serialize()}), 200

@@ -12,12 +12,9 @@ export const Register = () => {
   const [infoError, setInfoError] = useState(false);
   const [infoError2, setInfoError2] = useState(false);
 
-  
+  //REGISTER
 
-  
-   //REGISTER
-
-   const sendUserInfo = async () => {
+  const sendUserInfo = async () => {
     if (
       onlyLettersAndNumbers(user.username) &&
       user.username != "" &&
@@ -35,46 +32,45 @@ export const Register = () => {
       const data = await response.json();
       if (data.created) {
         initialState(); //state = ""
-       
       } else {
-        alert(error);
+        alert("error");
       }
     } else {
       messageError();
     }
   };
 
- //INPUT FUNCTIONS
+  //INPUT FUNCTIONS
 
- const onlyLettersAndNumbers = (element) => {
-  return /^[A-Ñ-Za-ñ-z0-9]*$/.test(element);
-};
+  const onlyLettersAndNumbers = (element) => {
+    return /^[A-Ñ-Za-ñ-z0-9]*$/.test(element);
+  };
 
-const emailInput = (element) => {
-  return /^[A-Ñ-Za-ñ-z0-9@.]*$/.test(element);
-};
+  const emailInput = (element) => {
+    return /^[A-Ñ-Za-ñ-z0-9@.]*$/.test(element);
+  };
 
-const emailIsValid = (email) => {
-  //validates that the input is an email address
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-};
+  const emailIsValid = (email) => {
+    //validates that the input is an email address
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
-const messageError = () => {
-  setInfoError(true);
-};
+  const messageError = () => {
+    setInfoError(true);
+  };
 
-const messageError2 = () => {
-  setInfoError2(true);
-};
+  const messageError2 = () => {
+    setInfoError2(true);
+  };
 
-const initialState = () => {
-  //set states to ""
-  user.username = "";
-  user.email = "";
-  user.password = "";
-  user.firstname = "";
-  user.lastname = "";
-};
+  const initialState = () => {
+    //set states to ""
+    user.username = "";
+    user.email = "";
+    user.password = "";
+    user.firstname = "";
+    user.lastname = "";
+  };
 
   return (
     <div className="parent h-100">
@@ -95,9 +91,9 @@ const initialState = () => {
                     className="form-control mt-1"
                     placeholder="Full name"
                     style={
-                      user.username == "" || !onlyLettersAndNumbers(user.username)
-                        ? {                      
-                          }
+                      user.username == "" ||
+                      !onlyLettersAndNumbers(user.username)
+                        ? {}
                         : null
                     }
                     onChange={(e) =>
@@ -109,7 +105,6 @@ const initialState = () => {
                         setInfoError(false)
                       )
                     }
-                
                   />
                 </div>
                 <div className="form-group mt-3">
@@ -122,9 +117,7 @@ const initialState = () => {
                       user.email == "" ||
                       !emailIsValid(user.email) ||
                       !emailInput(user.email)
-                        ? {
-                         
-                          }
+                        ? {}
                         : null
                     }
                     onChange={(e) =>
@@ -159,26 +152,30 @@ const initialState = () => {
                   />
                 </div>
                 <div className="d-grid gap-2 mt-3">
-                  <button type="submit" style={{backgroundColor : "burlywood"}}  onKeyPress={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    sendUserInfo();
-                  }
-                }}
-                onClick={() => {
-                  sendUserInfo();
-                }}>
+                  <button
+                    type="submit"
+                    style={{ backgroundColor: "burlywood" }}
+                    onKeyPress={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        sendUserInfo();
+                      }
+                    }}
+                    onClick={() => {
+                      sendUserInfo();
+                    }}
+                  >
                     Create Account
                   </button>
                   {infoError == true ? (
-                <div className="error-register">
-                  <i className="icon-error2 fas fa-exclamation-circle"></i>
-                  <p>Please write the fields correctly.</p>
-                </div>
-              ) : (
-                <div className="before-register"></div>
-              )}
+                    <div className="error-register">
+                      <i className="icon-error2 fas fa-exclamation-circle"></i>
+                      <p>Please write the fields correctly.</p>
+                    </div>
+                  ) : (
+                    <div className="before-register"></div>
+                  )}
                 </div>
                 <p className="forgot-password text-right mt-3">
                   <input type="checkbox" /> I Agree to Privacy Policy
