@@ -10,12 +10,21 @@ import background from "../../img/background_image.png";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Cardfollow} from "../component/cardfollow";
+import { useNavigate } from "react-router-dom";
 
 export const Myfoll = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const logout = () => {
+    {
+       navigate("/");
+     }
+   };
+ 
 
   return (
     <div className="containerprofile">
@@ -34,7 +43,9 @@ export const Myfoll = () => {
             <button type="button" onClick={handleShow}>
               Edit
             </button>
-            <button style= {{backgroundColor: "white", color: "black"}} type="button" onClick={localStorage.clear()}>
+            <button style= {{backgroundColor: "white", color: "black"}} type="button" onClick={() => {
+                      logout();
+                    }} >
               Logout
             </button>
             <Modal className="modalprofile" show={show} onHide={handleClose}>
