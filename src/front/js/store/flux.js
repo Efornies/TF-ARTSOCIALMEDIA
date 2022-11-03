@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: {},
 			profile: {},
 			message: null,
-			url: "https://3001-efornies-tfartsocialmed-4tdalgn2yuy.ws-eu73.gitpod.io/",
+			url: "https://3001-efornies-tfartsocialmed-ooffqf9dbyg.ws-eu73.gitpod.io/",
 			user: {},
 			logged: null
 		},
